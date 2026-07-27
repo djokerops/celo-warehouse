@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+web3 = "==7.*"
+requests = "==2.*"
+tenacity = "==9.*"
+google-cloud-bigquery = "==3.*"
+pandas = "==2.*"
+pyarrow = "==17.*"
+python-dotenv = "==1.*"
+dbt-core = "==1.11.*"
+dbt-bigquery = "==1.11.*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.15"

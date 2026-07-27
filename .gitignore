@@ -1,0 +1,8 @@
+.env
+*.json
+__pycache__/
+*.pyc
+celo_dbt/target/
+celo_dbt/dbt_packages/
+celo_dbt/logs/
+.DS_Store

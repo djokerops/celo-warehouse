@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: celo_raw
+    database: "{{ env_var('GCP_PROJECT_ID', target.project)}}"
+    schema: celo_raw
+    description: "raw celo mainnet data extracted through forno extractor"
+    tables:
+      - name: raw_usdm_transfers
+        description: "decoded USDm erc-20 transfer events"
+        columns:
+          - name: tx_hash
+            description: "transaction hash of the transfer"
+          - name: raw_value
+            description: "transfer amount in token base unit as string"
+      - name: raw_blocks
+        description: "block metadata for blocks containing USDm transfers"

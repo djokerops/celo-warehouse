@@ -1,0 +1,28 @@
+version: 2
+
+models:
+- name: stg_usdm_transfers
+  description: "cleaned usdm transfer events"
+  columns: 
+    - name: tx_hash
+      description: "Transaction hash"
+      tests: [not_null]
+    - name: amount_usdm
+      decription: "transfer amount in usdm"
+      test: 
+      - not_null
+    - name: from_address
+      tests: [not_null]
+
+- name: stg_blocks
+  description: "clean block metadata"
+  columns:
+    - name: block_number
+      description: "the number of the block mined"
+      tests:
+        - not_null
+        - unique
+    - name: block_timestamp
+      description: "time block is mine"
+      tests:
+        - not_null

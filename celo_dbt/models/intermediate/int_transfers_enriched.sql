@@ -33,5 +33,5 @@ FROM transfers t
 INNER JOIN blocks b ON t.block_number = b.block_number
 
 {% if is_incremental() %}
-where b.block_number > (select coalesce(block_number, 0) from {{this}})
+where b.block_number > (select coalesce(max(block_number), 0) from {{this}})
 {% endif %}
